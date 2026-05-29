@@ -16,6 +16,8 @@ Route::get('/', function () {
 
 Route::post('/login', [AuthController::class, 'connecter'])->name('login.post');
 
+Route::get('/mobile', function () {return view('mobile');})->name('mobile');
+
 // Routes protégées (connexion obligatoire)
 Route::middleware('auth')->group(function () {
 
