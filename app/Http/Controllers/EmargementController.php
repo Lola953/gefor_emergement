@@ -18,14 +18,12 @@ class EmargementController extends Controller
     {
         $request->validate([
             'signature' => 'required|string',
-            'date'      => 'required|date',
-            'heure'     => 'required',
         ]);
 
         Emargement::create([
             'signature' => $request->signature,
-            'date'      => $request->date,
-            'heure'     => $request->heure,
+            'date'      => now()->toDateString(),
+            'heure'     => now()->toTimeString(),
         ]);
 
         return redirect()->route('emargement.index');
