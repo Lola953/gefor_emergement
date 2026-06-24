@@ -1,6 +1,4 @@
-Voilà la version refaite dans le style GEFOR :
 
-```blade
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -158,6 +156,3 @@ Voilà la version refaite dans le style GEFOR :
 
 </body>
 </html>
-```
-
-Ctrl+A dans `formateurs.blade.php`, supprime tout, colle ça, **Ctrl+S** ! 😊
