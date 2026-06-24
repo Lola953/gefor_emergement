@@ -12,6 +12,8 @@ class Emargement extends Model
 {
     use HasFactory;
 
+    protected $table = 'emargement';
+
     protected $fillable = [
         'heure',
         'date',
