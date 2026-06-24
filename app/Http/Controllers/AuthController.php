@@ -22,7 +22,15 @@ class AuthController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->route('cours.accueil');
+        $role = Auth::user()->role;
+
+        if ($role === 'admin') {
+            return redirect('/administration');
+        } elseif ($role === 'formateur') {
+            return redirect('/formateurs');
+        } else {
+            return redirect('/apprenants');
+        }
     }
 
     public function logout(Request $request)
