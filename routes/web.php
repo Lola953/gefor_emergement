@@ -40,6 +40,6 @@ Route::post('/emargement', [EmargementController::class, 'store'])->name('emarge
 
 // Routes protégées (connexion obligatoire)
 Route::middleware('auth')->group(function () {
-    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::match(['GET','POST'], '/logout', [AuthController::class, 'logout'])->name('logout');
     Route::post('/me', [AuthController::class, 'me'])->name('me');
 });
