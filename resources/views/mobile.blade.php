@@ -3,46 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Télécharger l'application GEFOR</title>
+    <title>GEFOR - Application mobile</title>
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #1a1a2e;
+            background-color: #1a1f3c;
             color: white;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
-        .container {
+        .card {
+            background-color: #252b4a;
+            border: 1px solid #3a4170;
+            border-radius: 20px;
+            padding: 50px 40px;
+            max-width: 450px;
+            width: 100%;
             text-align: center;
-            padding: 40px;
-            background-color: #16213e;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
         }
-        h1 { color: #e94560; }
-        p { margin: 20px 0; }
+        .logo-wrapper {
+            background-color: #1a1f3c;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px auto;
+            overflow: hidden;
+        }
+        .logo-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-g {
+            font-size: 3em;
+            color: white;
+            font-family: Georgia, serif;
+            font-weight: bold;
+            line-height: 1;
+        }
+        .logo-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 2px;
+        }
+        .logo-roupe {
+            font-size: 0.6em;
+            color: white;
+            font-family: Georgia, serif;
+            letter-spacing: 3px;
+        }
+        .logo-efor {
+            font-size: 1em;
+            color: #c0392b;
+            font-family: Georgia, serif;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        h1 {
+            font-size: 1.6em;
+            font-weight: normal;
+            margin-bottom: 12px;
+        }
+        p {
+            color: #aaa;
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
         .btn {
             display: inline-block;
-            padding: 15px 30px;
-            background-color: #e94560;
+            background-color: #c0392b;
             color: white;
+            padding: 14px 30px;
+            border-radius: 25px;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 18px;
+            font-size: 1em;
+            transition: background-color 0.2s;
+            margin-bottom: 20px;
         }
-        .btn:hover { background-color: #c73652; }
+        .btn:hover { background-color: #a93226; }
+        .back {
+            display: block;
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.85em;
+            transition: color 0.2s;
+        }
+        .back:hover { color: white; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Application GEFOR</h1>
-        <p>Téléchargez l'application mobile GEFOR pour Android</p>
+    <div class="card">
+
+        <div class="logo-wrapper">
+            <div class="logo-inner">
+                <span class="logo-g">G</span>
+                <div class="logo-right">
+                    <span class="logo-roupe">ROUPE</span>
+                    <span class="logo-efor">EFOR</span>
+                </div>
+            </div>
+        </div>
+
+        <h1>Application mobile GEFOR</h1>
+        <p>Téléchargez l'application Android pour signer vos émargements, consulter votre planning et envoyer vos justificatifs depuis votre smartphone.</p>
+
         <a href="{{ asset('app-release.apk') }}" download class="btn">
             📱 Télécharger l'APK
         </a>
+
+        <a href="/" class="back">← Retour à la page de connexion</a>
+
     </div>
 </body>
 </html>
